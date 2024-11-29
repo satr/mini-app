@@ -3,7 +3,7 @@ const http = require('http');
 const requestListener = function (req, res) {
   res.writeHead(200);
   console.log(`got request`);
-  res.end(`Hello, from web-app`);
+  res.end(`Hello, from web-app2`);
 }
 
 http.createServer(requestListener).listen(8080);
