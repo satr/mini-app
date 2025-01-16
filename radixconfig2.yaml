@@ -14,7 +14,10 @@ spec:
         from: "*"
     - name: dev3
       build:
-        from: "*"
+        from: "**"
+    - name: dev4
+      build:
+        from: "***"
   components:
     - name: server
       ports:
