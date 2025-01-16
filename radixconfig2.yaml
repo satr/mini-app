@@ -1,0 +1,22 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: mini-app
+spec:
+  build:
+    useBuildKit: true
+  environments:
+    - name: dev
+      build:
+        from: main
+    - name: dev2
+      build:
+        from: *
+  components:
+    - name: server
+      ports:
+        - name: http
+          port: 8080
+      publicPort: http
+      variables:
+        VAR1: test
