@@ -11,10 +11,10 @@ spec:
         from: main
     - name: dev2
       build:
-        from: *
+        from: "*"
     - name: dev3
       build:
-        from: *
+        from: "*"
   components:
     - name: server
       ports:
