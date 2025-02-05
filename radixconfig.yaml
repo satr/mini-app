@@ -31,7 +31,7 @@ spec:
         - environment: dev2
           identity:
             azure:
-              clientId: ""
+              clientId: "abc"
         - environment: dev3
           identity:
             azure: {}
