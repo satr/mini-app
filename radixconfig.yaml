@@ -35,9 +35,6 @@ spec:
           identity:
             azure:
               clientId: "5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6"
-        - environment: dev3
-          identity:
-            azure: {}
         - environment: dev4
           identity: {}
         - environment: dev5
