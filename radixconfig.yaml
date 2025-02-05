@@ -18,6 +18,9 @@ spec:
     - name: dev4
       build:
         from: main
+    - name: dev5
+      build:
+        from: main
   components:
     - name: server
       identity:
@@ -37,3 +40,4 @@ spec:
             azure: {}
         - environment: dev4
           identity: {}
+        - environment: dev5
