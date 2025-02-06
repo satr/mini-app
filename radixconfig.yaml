@@ -12,15 +12,11 @@ spec:
     - name: dev2
       build:
         from: main
+        disableWebhook: true
     - name: dev3
       build:
         from: main
-    - name: dev4
-      build:
-        from: main
-    - name: dev5
-      build:
-        from: main
+        disableWebhook: false
   components:
     - name: server
       identity:
