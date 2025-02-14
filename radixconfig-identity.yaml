@@ -16,7 +16,7 @@ spec:
           clientId: "7ef841f8-a263-45ea-8993-683cc6817ae2"
       authentication:
         oauth2:
-          clientId: "b96d264b-7053-4465-a4a7-32be5b0fec49"
+          clientId: "5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6"
           useAzureIdentity: true
       ports:
         - name: http
