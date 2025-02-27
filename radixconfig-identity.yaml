@@ -18,8 +18,8 @@ spec:
       authentication:
         oauth2:
           clientId: "5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6"
-          # credentials: azureWorkloadIdentity
-          credentials: secret
+          credentials: azureWorkloadIdentity
+          # credentials: secret
       ports:
         - name: http
           port: 8080
