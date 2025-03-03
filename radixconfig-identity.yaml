@@ -10,6 +10,14 @@ spec:
       build:
         from: main
     - name: dev2
+      build:
+        from: main
+    - name: dev3
+      build:
+        from: main
+    - name: dev4
+      build:
+        from: main
   components:
     - name: server
       # identity:
@@ -25,3 +33,16 @@ spec:
           port: 8080
       publicPort: http
       replicas: 2
+      environmentConfig:
+      - environment: dev
+        replicas: 3
+      - environment: dev2
+        replicas: 4
+      - environment: dev3
+    - name: server2
+      environmentConfig:
+      - environment: dev
+        replicas: 3
+      - environment: dev2
+        replicas: 4
+      - environment: dev3
