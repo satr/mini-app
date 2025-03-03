@@ -35,12 +35,12 @@ spec:
         - name: http
           port: 8080
       publicPort: http
-      replicas: 2
+      replicas: 0
       environmentConfig:
       - environment: dev
         replicas: 3
       - environment: dev2
-        replicas: 4
+        replicas: 0
       - environment: dev3
       - environment: dev5
         replicas: 0
