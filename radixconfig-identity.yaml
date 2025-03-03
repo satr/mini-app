@@ -42,7 +42,7 @@ spec:
       - environment: dev2
         replicas: 4
       - environment: dev3
-      - environment: dev4
+      - environment: dev5
         replicas: 0
     - name: server2
       environmentConfig:
@@ -51,5 +51,5 @@ spec:
       - environment: dev2
         replicas: 4
       - environment: dev3
-      - environment: dev4
+      - environment: dev5
         replicas: 0
