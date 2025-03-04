@@ -9,18 +9,6 @@ spec:
     - name: dev
       build:
         from: main
-    - name: dev2
-      build:
-        from: main
-    - name: dev3
-      build:
-        from: main
-    - name: dev4
-      build:
-        from: main
-    - name: dev5
-      build:
-        from: main
   components:
     - name: server
       # identity:
@@ -30,26 +18,10 @@ spec:
         oauth2:
           clientId: "5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6"
           credentials: azureWorkloadIdentity
-          # credentials: secret
+          
       ports:
         - name: http
           port: 8080
       publicPort: http
-      replicas: 1
       environmentConfig:
       - environment: dev
-        replicas: 3
-      - environment: dev2
-        replicas: 0
-      - environment: dev3
-      - environment: dev5
-        replicas: 0
-    - name: server2
-      environmentConfig:
-      - environment: dev
-        replicas: 3
-      - environment: dev2
-        replicas: 4
-      - environment: dev3
-      - environment: dev5
-        replicas: 0
