@@ -14,10 +14,13 @@ const requestListener = function (req, res) {
     };
 
     const routeKey = `${req.method}:${req.url}`;
+    console.log(`Key:${routeKey}`);
     if (routes[routeKey]) {
+        console.log(`Value:${routes[routeKey]}`);
         res.writeHead(routeKey.startsWith("V") ? 200 : 401);
         res.end(routes[routeKey]);
     } else {
+        console.log('Not found value');
         res.writeHead(404);
         res.end(`X NOT FOUND: ${req.method} ${req.url}`);
     }
