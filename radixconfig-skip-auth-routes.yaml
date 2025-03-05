@@ -17,13 +17,23 @@ spec:
       authentication:
         oauth2:
           clientId: "5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6"
-          credentials: azureWorkloadIdentity
+          # credentials: azureWorkloadIdentity
           skipAuthRoutes:
           - GET=^/api/v1/resource/[0-9]+/
           - POST=^/login/
+          sessionStoreType: redis
+          redisStore:
+            connectionUrl: redis://redis:6379      
       ports:
         - name: http
           port: 8080
       publicPort: http
       environmentConfig:
       - environment: dev
+    - name: redis
+      image: bitnami/redis:latest
+      secrets:
+        - REDIS_PASSWORD
+      ports:
+        - name: redis
+          port: 6379    
