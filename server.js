@@ -1,41 +1,30 @@
-const http = require('http');
+// Import required modules
+const express = require('express');
+const app = express();
+const port = 8080;
 
-const requestListener = function (req, res) {
-    console.log(`Received ${req.method} request to ${req.url}`);
+// Home Route
+app.get('/', (req, res) => {
+    res.send(`Welcome to the Home Page!
+        routes: /about /contact /services`);
+});
 
-    const routes = {
-        // ✅ Matching OAUTH2_PROXY_SKIP_AUTH_ROUTE
-        "GET:/api/v1/resource/1234/": "V MATCHED SKIP-AUTH: GET /api/v1/resource/1234/",
-        "POST:/login": "V MATCHED SKIP-AUTH: POST /login",
+// About Route
+app.get('/about', (req, res) => {
+    res.send('This is the About Page.');
+});
 
-        // X Not Matching (Should Require Authentication)
-        "GET:/api/v1/resource/test/": "X AUTH REQUIRED: GET /api/v1/resource/test/",
-        "POST:/register": "X AUTH REQUIRED: POST /register",
-    };
+// Contact Route
+app.get('/contact', (req, res) => {
+    res.send('This is the Contact Page.');
+});
 
-    const routeKey = `${req.method}:${req.url}`;
-    console.log(`Key:${routeKey}`);
-    if (routes[routeKey]) {
-        console.log(`Value:${routes[routeKey]}`);
-        res.writeHead(routeKey.startsWith("V") ? 200 : 401);
-        res.end(routes[routeKey]);
-    } else {
-        console.log('Not found value');
-        res.writeHead(404);
-        res.end(`X NOT FOUND: ${req.method} ${req.url}`);
-    }
-};
+// Services Route
+app.get('/services', (req, res) => {
+    res.send('Our Services Page. ${req.url}');
+});
 
-const server = http.createServer(requestListener);
-
-server.listen(8080, () => {
-    console.log('V Server is running on port 8080');
-    console.log(`
-        // V Matching OAUTH2_PROXY_SKIP_AUTH_ROUTE
-        "GET:/api/v1/resource/1234/": "V MATCHED SKIP-AUTH: GET /api/v1/resource/1234/",
-        "POST:/login": "V MATCHED SKIP-AUTH: POST /login",
-
-        // X Not Matching (Should Require Authentication)
-        "GET:/api/v1/resource/test/": "X AUTH REQUIRED: GET /api/v1/resource/test/",
-        "POST:/register": "X AUTH REQUIRED: POST /register",`)
+// Start the server
+app.listen(port, () => {
+    console.log(`Server running at port ${port}/`);
 });

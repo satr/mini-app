@@ -1,9 +1,12 @@
-FROM docker.io/node:alpine
+FROM node:18
 
 WORKDIR /app
 
-COPY ./server.js .
+COPY package.json ./
+RUN npm install
 
-USER 1000
+COPY . .
+
+EXPOSE 8080
 
 CMD ["node", "server.js"]

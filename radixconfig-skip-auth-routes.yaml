@@ -19,8 +19,10 @@ spec:
           clientId: "5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6"
           # credentials: azureWorkloadIdentity
           skipAuthRoutes:
-          - GET=^/api/v1/resource/[0-9]+/
-          - POST=^/login/
+          - GET=^/about
+          - GET=^/services/[0-9]+/
+          # - GET=^/api/v1/resource/[0-9]+/
+          # - POST=^/login/
           sessionStoreType: redis
           redisStore:
             connectionUrl: redis://redis:6379      
