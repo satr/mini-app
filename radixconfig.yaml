@@ -5,6 +5,9 @@ metadata:
 spec:
   build:
     useBuildKit: true
+    secrets:
+      - SECRET_1
+      - SECRET_2
   environments:
     - name: dev
       build:
