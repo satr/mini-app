@@ -17,4 +17,5 @@ spec:
       ports:
         - name: http
           port: 8080
-          
+      variables:
+        VAR1: v1
