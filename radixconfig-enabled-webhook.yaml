@@ -9,11 +9,11 @@ spec:
     - name: dev
       build:
         from: main
-    - name: dev
+    - name: dev2
       build:
         from: main
         webhookEnabled: true
-    - name: dev
+    - name: dev3
       build:
         from: main
         webhookEnabled: false
