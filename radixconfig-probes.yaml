@@ -23,10 +23,10 @@ spec:
       #     port: 8080
       variables:
         VAR1: v4
-      healthChecks:
-        startupProbe:
-          tcpSocket:
-            port: 8080
+      # healthChecks:
+      #   startupProbe:
+      #     tcpSocket:
+      #       port: 8080
       #   livenessProbe:
       #     httpGet:
       #       port: 8080
