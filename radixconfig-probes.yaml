@@ -17,13 +17,13 @@ spec:
         from: main
   components:
     - name: app1
-      src: ./app1
+      image: radixdev.azurecr.io/mini-app-dev-app1:s8wxl
       ports:
         - name: http
           port: 8080
       variables:
         VAR1: v4
-      healthChecks:
+      # healthChecks:
         # startupProbe:
         #   tcpSocket:
         #     port: 8080
@@ -41,7 +41,7 @@ spec:
         #     port: 8080
         #     path: /healthz/ready # Component is Ready when this endpoint returns a successful status code (2xx or 3xx)
     - name: app2
-      src: ./app2
+      image: radixdev.azurecr.io/mini-app-dev-app2:s8wxl
       ports:
         - name: http
           port: 8080
