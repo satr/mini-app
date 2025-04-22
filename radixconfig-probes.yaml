@@ -27,10 +27,10 @@ spec:
         startupProbe:
           tcpSocket:
             port: 8080
-        # livenessProbe:
-        #   httpGet:
-        #     port: 8080
-        #     path: /healthz/live
+        livenessProbe:
+          httpGet:
+            port: 8080
+            path: /healthz/live
         # readinessProbe:
         #   successThreshold: 1
         #   periodSeconds: 30
