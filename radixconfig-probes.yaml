@@ -1,0 +1,49 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: mini-app
+spec:
+  build:
+    useBuildKit: true
+  environments:
+    - name: dev
+      build:
+        from: main
+    - name: dev2
+      build:
+        from: main
+    - name: dev3
+      build:
+        from: main
+  components:
+    - name: app1
+      src: ./app1
+      ports:
+        - name: http
+          port: 8080
+      variables:
+        VAR1: v4
+      healthChecks:
+        startupProbe:
+          tcpSocket:
+            port: 8080
+        livenessProbe:
+          httpGet:
+            port: 8080
+            path: /healthz/live
+        readinessProbe:
+          successThreshold: 1
+          periodSeconds: 30
+          failureThreshold: 3
+          initialDelaySeconds: 10
+          timeoutSeconds: 5
+          httpGet:
+            port: 8080
+            path: /healthz/ready # Component is Ready when this endpoint returns a successful status code (2xx or 3xx)
+     - name: app2
+      src: ./app2
+      ports:
+        - name: http
+          port: 8080
+      variables:
+        VAR1: v6

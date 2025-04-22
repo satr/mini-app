@@ -24,7 +24,18 @@ app.get('/services', (req, res) => {
     res.send('Our Services Page. ${req.url}');
 });
 
+// Services Route
+app.get('/healthz/live', (req, res) => {
+    res.send('Ok /healthz/live');
+});
+
+// Services Route
+app.get('/healthz/ready', (req, res) => {
+    res.send('Ok /healthz/ready');
+});
+
 // Start the server
 app.listen(port, () => {
     console.log(`Server running at port ${port}/`);
 });
+
