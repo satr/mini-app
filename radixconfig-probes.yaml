@@ -18,9 +18,9 @@ spec:
   components:
     - name: app1
       image: radixdev.azurecr.io/mini-app-dev-app1:s8wxl
-      ports:
-        - name: http
-          port: 8080
+      # ports:
+      #   - name: http
+      #     port: 8080
       variables:
         VAR1: v4
       # healthChecks:
