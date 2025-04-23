@@ -23,23 +23,23 @@ spec:
           port: 8080
       variables:
         VAR1: v4
-      # healthChecks:
-      #   startupProbe:
-      #     tcpSocket:
-      #       port: 8080
-      #   livenessProbe:
-      #     httpGet:
-      #       port: 8080
-      #       path: /healthz/live
-      #   readinessProbe:
-      #     successThreshold: 1
-      #     periodSeconds: 30
-      #     failureThreshold: 3
-      #     initialDelaySeconds: 10
-      #     timeoutSeconds: 5
-      #     httpGet:
-      #       port: 8080
-      #       path: /healthz/ready # Component is Ready when this endpoint returns a successful status code (2xx or 3xx)
+      healthChecks:
+        startupProbe:
+          tcpSocket:
+            port: 8080
+        livenessProbe:
+          httpGet:
+            port: 8080
+            path: /healthz/live
+        readinessProbe:
+          successThreshold: 1
+          periodSeconds: 30
+          failureThreshold: 3
+          initialDelaySeconds: 10
+          timeoutSeconds: 5
+          httpGet:
+            port: 8080
+            path: /healthz/ready # Component is Ready when this endpoint returns a successful status code (2xx or 3xx)
     - name: app2
       image: radixdev.azurecr.io/mini-app-dev-app2:s8wxl
       ports:
