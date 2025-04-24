@@ -25,7 +25,7 @@ spec:
           port: 8080
       variables:
         VAR1: v8
-    - name: app2
+    - name: app3
       src: ./app2
       ports:
         - name: http
