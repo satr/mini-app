@@ -11,8 +11,8 @@ spec:
         from: main
   components:
     - name: app1
-      src: app3/old
-      dockerfileName: api/Dockerfile2
+      src: api/legacy-n2g
+      dockerfileName: api/Dockerfile
       ports:
         - name: http
           port: 8080
