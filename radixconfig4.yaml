@@ -11,7 +11,7 @@ spec:
         from: main
   components:
     - name: app1
-      src: ./app3
+      src: app3/old
       dockerfileName: api/Dockerfile2
       ports:
         - name: http
