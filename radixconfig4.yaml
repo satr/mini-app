@@ -4,7 +4,7 @@ metadata:
   name: mini-app
 spec:
   build:
-    useBuildKit: false
+    useBuildKit: true
   environments:
     - name: dev
       build:
