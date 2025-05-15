@@ -1,0 +1,29 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: mini-app
+spec:
+  build:
+    useBuildKit: true
+  environments:
+    - name: dev
+      build:
+        from: main
+  components:
+    - name: server
+      image: nginxinc/nginx-unprivileged:alpine3.21
+      variables:
+        VAR1: v5
+      identity:
+        azure:
+          clientId: 7ef841f8-a263-45ea-8993-683cc6817ae2
+      volumeMounts:
+      - name: storage1
+        path: /app/image-storage1
+        blobFuse2:
+          container: images
+          useAdls: true
+          useAzureIdentity: false
+          storageAccount: radixblobtest6
+          subscriptionId: 16ede44b-1f74-40a5-b428-46cca9a5741b
+          uid: 1000
