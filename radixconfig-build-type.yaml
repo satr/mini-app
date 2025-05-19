@@ -12,6 +12,10 @@ spec:
     - name: dev2
       build:
         from: main
+    - name: dev3
+      build:
+        from: v.*
+        webhookEnabled: false
   components:
     - name: server
       src: ./app1
