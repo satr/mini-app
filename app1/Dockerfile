@@ -4,8 +4,7 @@ WORKDIR /app
 
 COPY package.json ./
 RUN npm install
-
-
+RUN date
 COPY . .
 
 EXPOSE 8080
