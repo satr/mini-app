@@ -10,11 +10,7 @@ spec:
       build:
         from: main
   components:
-    - name: app1
-      src: "api/legacy-n2g"
-      dockerfileName: "api/Dockerfile"
-      ports:
-        - name: http
-          port: 8080
+    - name: server
+      image: nginxinc/nginx-unprivileged
       variables:
-        VAR1: v4
+        VAR1: v5
