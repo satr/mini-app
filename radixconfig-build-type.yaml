@@ -8,13 +8,18 @@ spec:
   environments:
     - name: dev
       build:
-        from: main
+        from: (main|v1.*)
     - name: dev2
       build:
-        from: main
+        from: (main|v1.*)
+        fromType: branch
     - name: dev3
       build:
-        from: v.*
+        from: (main|v1.*)
+        fromType: tag
+    - name: dev4
+      build:
+        from: (main|v1.*)
         webhookEnabled: false
   components:
     - name: server
