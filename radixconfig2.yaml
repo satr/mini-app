@@ -20,9 +20,9 @@ spec:
         from: "***"
   components:
     - name: server
+      src: ./app1
       ports:
         - name: http
           port: 8080
-      publicPort: http
       variables:
         VAR1: test
