@@ -1,0 +1,10 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+RUN echo "import time\nimport random\nprint('Starting task...')\ndelay = random.uniform(5, 10)\nprint(f'Waiting for {delay:.0f} seconds.')\ntime.sleep(delay)\nprint('Done!')" > wait_and_print.py
+
+
+USER 1000
+
+CMD ["python", "wait_and_print.py"]
