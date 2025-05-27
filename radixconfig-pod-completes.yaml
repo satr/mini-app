@@ -11,9 +11,4 @@ spec:
         from: main
   components:
     - name: server
-      src: ./app1
-      ports:
-        - name: http
-          port: 8080
-      variables:
-        VAR1: v24
+      dockerfileName: radixconfig-pod-completes.yaml
