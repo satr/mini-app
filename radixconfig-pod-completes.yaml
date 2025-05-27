@@ -11,4 +11,4 @@ spec:
         from: main
   components:
     - name: server
-      dockerfileName: radixconfig-pod-completes.yaml
+      dockerfileName: Dockerfile.pod-completed
