@@ -38,7 +38,7 @@ spec:
       ports:
         - name: http
           port: 8080
-      command: ["echo", "Hello, World!", "&&", "./start.sh""]
+      command: ["echo", "Hello, World!", "&&", "./start.sh"]
       environmentConfig:
       - environment: dev
 
@@ -46,4 +46,3 @@ spec:
 
       - environment: dev3
       - environment: dev5
-
