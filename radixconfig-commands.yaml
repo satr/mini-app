@@ -1,0 +1,49 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: mini-app
+spec:
+  build:
+    useBuildKit: true
+  environments:
+    - name: dev
+      build:
+        from: main
+    - name: dev2
+      build:
+        from: main
+    - name: dev3
+      build:
+        from: main
+    - name: dev4
+      build:
+        from: main
+    - name: dev5
+      build:
+        from: main
+  components:
+    - name: server
+      ports:
+        - name: http
+          port: 8080
+      environmentConfig:
+      - environment: dev
+
+      - environment: dev2
+
+      - environment: dev3
+      - environment: dev5
+
+    - name: server2
+      ports:
+        - name: http
+          port: 8080
+      command: ["echo", "Hello, World!"]
+      environmentConfig:
+      - environment: dev
+
+      - environment: dev2
+
+      - environment: dev3
+      - environment: dev5
+
