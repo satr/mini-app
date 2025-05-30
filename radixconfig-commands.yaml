@@ -48,5 +48,4 @@ spec:
         command: ["sh"]
         args: ["-c", "echo 'Hello2' && ./start.sh"]
       - environment: dev5
-        command: []
         args: ["--verbose"]
