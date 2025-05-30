@@ -41,7 +41,6 @@ spec:
       command: ["sh", "-c", "echo 'Hello' && ./start.sh"]
       environmentConfig:
       - environment: dev
-        command: {}
       - environment: dev2
         args: ["--verbose"]
       - environment: dev3
