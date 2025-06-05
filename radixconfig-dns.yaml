@@ -17,15 +17,19 @@ spec:
         from: main
   components:
     - name: server
+      replicas: 0
       ports:
         - name: http
           port: 8080
       variables:
         VAR1: v5
+      publicPort: http
     - name: server2
+      replicas: 0
       ports:
         - name: http
           port: 8080
+      publicPort: http
   dnsAlias:
     - alias: myapp1
       component: server
