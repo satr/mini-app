@@ -1,0 +1,24 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: mini-app
+spec:
+  build:
+    useBuildKit: true
+  environments:
+    - name: dev
+      build:
+        from: main
+  components:
+    - name: server
+      authentication:
+        oauth2:
+          clientId: "5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6"
+          credentials: azureWorkloadIdentity
+          sessionStoreType: systemManaged
+      ports:
+        - name: http
+          port: 8080
+      publicPort: http
+      environmentConfig:
+      - environment: dev
