@@ -6,16 +6,7 @@ spec:
   build:
     useBuildKit: true
   environments:
-    - name: auth2-no-redis
-      build:
-        from: main
-    - name: no-auth2
-      build:
-        from: main
-    - name: auth2-ext-redis
-      build:
-        from: main
-    - name: auth2-sys-redis
+    - name: dev
       build:
         from: main
   components:
@@ -29,24 +20,4 @@ spec:
           port: 8080
       publicPort: http
       environmentConfig:
-        - environment: auth2-sys-redis
-          authentication:
-            oauth2:
-              sessionStoreType: systemManaged
-        - environment: auth2-ext-redis
-          authentication:
-            oauth2:
-              sessionStoreType: redis
-              redisStore:
-                connectionUrl: redis://auth-state:6379
-    - name: auth-state
-      image: bitnami/redis:8.0
-      secrets:
-        - REDIS_PASSWORD
-      ports:
-        - name: redis
-          port: 6379
-      enabled: false
-      environmentConfig:
-        - environment: auth2-ext-redis
-          enabled: true
+      - environment: dev
