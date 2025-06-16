@@ -34,8 +34,7 @@ spec:
             oauth2:
               sessionStoreType: systemManaged
         - environment: no-auth2
-          authentication:
-            oauth2: {}
+          authentication: {}
         - environment: auth2-ext-redis
           authentication:
             oauth2:
