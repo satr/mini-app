@@ -6,6 +6,9 @@ spec:
   build:
     useBuildKit: true
   environments:
+    - name: devd
+      build:
+        from: main
     - name: auth2-no-redis
       build:
         from: main
