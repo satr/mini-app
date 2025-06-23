@@ -20,6 +20,7 @@ spec:
         from: main
   components:
     - name: server2
+      src: ./app2
       ports:
         - name: http
           port: 8080
@@ -49,6 +50,7 @@ spec:
         oauth2:
           clientId: "5e48ca1f-a2bf-4dec-b96d-bbf8ce69f9f6"
           credentials: azureWorkloadIdentity
+      src: ./app2
       ports:
         - name: http
           port: 8080
