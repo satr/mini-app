@@ -1,0 +1,5 @@
+FROM alpine
+
+USER 1000
+
+CMD ["sh", "-c", "echo waiting... && sleep 5 && exit 137"]
