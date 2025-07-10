@@ -13,23 +13,20 @@ spec:
     - name: dev2
       build:
         from: main
-        webhookEnabled: true
-    - name: dev3
-      build:
-        from: main
-        webhookEnabled: false
   components:
+    - name: app
+      src: api/legacy-n2g/
+      dockerfileName: api/Dockerfile
+      ports:
+        - name: http
+          port: 8080
     - name: app1
       src: ./app1
       ports:
         - name: http
           port: 8080
-      variables:
-        VAR1: v4
     - name: app2
       src: ./app2
       ports:
         - name: http
           port: 8080
-      variables:
-        VAR1: v10
