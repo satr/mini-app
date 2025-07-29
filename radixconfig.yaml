@@ -14,6 +14,7 @@ spec:
         from: main
   components:
     - name: server
+      image: radixdev.azurecr.io/mini-app-dev-server:lk1zh
       ports:
         - name: http
           port: 8080
